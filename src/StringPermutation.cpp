@@ -9,9 +9,7 @@ void permutation(string str, string prefix) {
 	}
 	else {
 		for (unsigned i = 0; i < str.length(); i++) {
-			string first = str.substr(0, i);
-			string second = str.substr(i + 1);
-			string rem = first + second;
+			string rem = str.substr(0, i) + str.substr(i + 1);
 			permutation(rem, prefix + str.at(i));
 		}
 	}
@@ -24,7 +22,7 @@ void permutation(string str) {
 }
 
 int main() {
-	permutation("Rauf");
+	permutation("abcd");
 
 	system("PAUSE");
 	return 0;
